@@ -12,7 +12,7 @@ jobs:
 
             -
                 # Uses an action in the root directory
-                uses: packages/monorepo-split-gitub-action
+                uses: packages/monorepo-split-github-action
                 env:
                     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
                 with:
