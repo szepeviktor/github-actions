@@ -33,9 +33,10 @@ runs:
         - ${{ inputs.package-directory }}
         - ${{ inputs.split-repository-organization }}
         - ${{ inputs.split-repository-name }}
-        - ${{ inputs.user-email }}
         - ${{ inputs.commit-message }}
         - ${{ inputs.tag }}
+        - ${{ inputs.user-email }}
+        - ${{ inputs.user-name }}
 
 branding:
     icon: maximize-2
