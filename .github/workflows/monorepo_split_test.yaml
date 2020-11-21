@@ -10,11 +10,6 @@ jobs:
             -
                 uses: actions/checkout@v2
 
-            # see https://github.com/WyriHaximus/github-action-get-previous-tag
-            -
-                id: previous_tag
-                uses: "WyriHaximus/github-action-get-previous-tag@master"
-
             -
                 # Uses an action in the root directory
                 uses: ./packages/monorepo-split-github-action
