@@ -3,7 +3,7 @@ name: 'Monorepo Split Test With Tag'
 on: [push]
 
 jobs:
-    self_test_with_tag:
+    monorepo_split_test_with_tag:
         runs-on: ubuntu-latest
 
         steps:
@@ -29,3 +29,5 @@ jobs:
                     split-repository-organization: 'symplify'
                     split-repository-name: 'monorepo-split-github-action-test'
                     tag: ${{ steps.previous_tag.outputs.tag }}
+                    user-name: "kaizen-ci"
+                    user-email: "info@kaizen-ci.org"

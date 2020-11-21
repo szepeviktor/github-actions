@@ -9,6 +9,10 @@ jobs:
         steps:
             -
                 uses: actions/checkout@v2
+                # this is required for "WyriHaximus/github-action-get-previous-tag" workflow
+                # see https://github.com/actions/checkout#fetch-all-history-for-all-tags-and-branches
+                with:
+                    fetch-depth: 0
 
             -
                 # Uses an action in the root directory
