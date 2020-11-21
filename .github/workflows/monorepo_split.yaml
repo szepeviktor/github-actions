@@ -20,4 +20,4 @@ jobs:
                     split-repository-organization: 'symplify'
                     split-repository-name: 'monorepo-split-github-action'
                     user-name: "kaizen-ci"
-                    user-email: "hello@kaizen-ci.org"
+                    user-email: "info@kaizen-ci.org"
