@@ -8,9 +8,12 @@ Based heavily on [cpina/github-action-push-to-another-repository](https://github
 ### Split Packages With Tag
 
 ```yaml
-name: 'Monorepo Split Test With Tag'
+name: 'Monorepo Split With Tag'
 
-on: [push]
+on:
+    push:
+        branches:
+            - master
 
 jobs:
     monorepo_split_test_with_tag:
@@ -30,15 +33,20 @@ jobs:
                 uses: "WyriHaximus/github-action-get-previous-tag@master"
 
             -
-                # Uses an action in the root directory
-                uses: ./packages/monorepo-split-github-action
+                uses: "symplify/monorepo-split-github-action@master"
                 env:
                     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
                 with:
-                    package-directory: 'packages/monorepo-split-github-action/tests/packages/some-package'
+                    # ↓ split "packages/easy-coding-standard" directory
+                    package-directory: 'packages/easy-coding-standard'
+
+                    # ↓ into https://github.com/symplify/easy-coding-standard repository
                     split-repository-organization: 'symplify'
-                    split-repository-name: 'monorepo-split-github-action-test'
+                    split-repository-name: 'easy-coding-standard'
+
                     tag: ${{ steps.previous_tag.outputs.tag }}
+
+                    # ↓ the user signed under the split commit
                     user-name: "kaizen-ci"
                     user-email: "info@kaizen-ci.org"
 ```
